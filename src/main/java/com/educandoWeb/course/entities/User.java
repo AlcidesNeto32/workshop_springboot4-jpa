@@ -2,6 +2,7 @@ package com.educandoWeb.course.entities;
 
 
 import jakarta.persistence.*;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -11,8 +12,10 @@ import java.util.Objects;
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // define the PK
+    @GeneratedValue  // species the strategy for PK generation
+            (strategy // strategy -> responsible to modify the generation strategy of PK
+            = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
