@@ -2,7 +2,6 @@ package com.educandoWeb.course.entities;
 
 
 import jakarta.persistence.*;
-import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.io.Serializable;
 import java.util.Objects;
