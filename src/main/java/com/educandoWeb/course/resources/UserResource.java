@@ -17,7 +17,7 @@ public class UserResource {
     @Autowired //This annotation is used for automatic injection.
     private UserService userService;
 
-    @GetMapping //is used for handling http GER requests
+    @GetMapping //is used for handling http GET requests
     public ResponseEntity<List<User>> findAll(){
         List<User> list =  userService.findAll();
         return  ResponseEntity.ok().body(list);

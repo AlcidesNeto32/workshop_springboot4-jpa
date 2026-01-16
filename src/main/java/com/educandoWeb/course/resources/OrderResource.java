@@ -17,7 +17,7 @@ public class OrderResource {
     @Autowired //This annotation is used for automatic injection.
     private OrderService OrderService;
 
-    @GetMapping //is used for handling http GER requests
+    @GetMapping //is used for handling http GET requests
     public ResponseEntity<List<Order>> findAll(){
         List<Order> list =  OrderService.findAll();
         return  ResponseEntity.ok().body(list);

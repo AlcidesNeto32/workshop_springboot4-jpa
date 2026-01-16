@@ -25,7 +25,8 @@ public class User implements Serializable {
     private String phone;
     private String password;
     @OneToMany(mappedBy = "client")
-    @JsonIgnore
+    @JsonIgnore //We use the @JsonIgnore annotation to specify a method or field that should be
+    // ignored during serialization and deserialization processes.
     private List<Order> orders = new ArrayList<>();
 
     public User() {
