@@ -8,7 +8,6 @@ import jakarta.persistence.ManyToOne;
 
 import java.io.Serializable;
 import java.util.Objects;
-
 @Embeddable
 public class OrderItemPK implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -36,6 +35,8 @@ public class OrderItemPK implements Serializable {
     public void setOrder(Order order) {
         this.order = order;
     }
+
+
 
     @Override
     public boolean equals(Object o) {

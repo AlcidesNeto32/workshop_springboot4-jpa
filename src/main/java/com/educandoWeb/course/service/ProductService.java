@@ -19,7 +19,7 @@ public class ProductService {
     }
 
     public Product findById(Long id){
-        Optional<Product> Product = repository.findById(id);
-        return  Product.get();
+        Optional<Product> product = repository.findById(id);
+        return  product.get();
     }
 }
