@@ -3,6 +3,7 @@ package com.educandoWeb.course.service;
 
 import com.educandoWeb.course.entities.Product;
 import com.educandoWeb.course.repositories.ProductRepository;
+import com.educandoWeb.course.service.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,7 @@ public class ProductService {
 
     public Product findById(Long id){
         Optional<Product> product = repository.findById(id);
-        return  product.get();
+        return  product.orElseThrow(() ->
+                new ResourceNotFoundException(id));
     }
 }

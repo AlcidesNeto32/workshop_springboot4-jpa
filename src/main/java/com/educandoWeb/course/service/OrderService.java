@@ -3,6 +3,7 @@ package com.educandoWeb.course.service;
 
 import com.educandoWeb.course.entities.Order;
 import com.educandoWeb.course.repositories.OrderRepository;
+import com.educandoWeb.course.service.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -19,6 +20,7 @@ public class OrderService {
 
     public Order findById(Long id){
         Optional<Order> order = repository.findById(id);
-        return  order.get();
+        return  order.orElseThrow(() ->
+                new ResourceNotFoundException(id));
     }
 }

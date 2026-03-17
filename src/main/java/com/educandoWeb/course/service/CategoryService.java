@@ -3,6 +3,7 @@ package com.educandoWeb.course.service;
 
 import com.educandoWeb.course.entities.Category;
 import com.educandoWeb.course.repositories.CategoryRepository;
+import com.educandoWeb.course.service.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,7 @@ public class CategoryService {
 
     public Category findById(Long id){
         Optional<Category> category = repository.findById(id);
-        return  category.get();
+        return  category.orElseThrow(() ->
+                new ResourceNotFoundException(id));
     }
 }

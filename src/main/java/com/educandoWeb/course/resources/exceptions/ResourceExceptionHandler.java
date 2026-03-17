@@ -28,4 +28,6 @@ public class ResourceExceptionHandler {
         StandardError standardError = new StandardError(Instant.now(), status.value(), error, e.getMessage(), request.getRequestURI());
         return ResponseEntity.status(status).body(standardError);
     }
+
+
 }
